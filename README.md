@@ -1,5 +1,19 @@
 ## Honestbee Data Engineering team interview test
 
+#### Setting Up
+1. Setup virtual environment with python3 `virtualenv -p python3 <ENV_PATH>`
+2. `source <ENV_PATH>/bin/activate` and `pip install requirements.txt`
+3. Start `hug -f server.py`
+4. Proxy-pass from nginx as necessary
+
+#### Usage
+* Currently hosted at https://seanang.me/honestbee/
+* Routes are `/leaderboard`, `/compare`, and `/suggest`, described in the next section
+
+___
+
+### Technical Questions
+
 #### 1. Leaderboard
 _Given a list of player(s) (either player_id or username and assuming all players have a Dota2 public profile), return a leaderboard of the players based on their win rate over time (last week, last month, last year...)._
 
@@ -42,6 +56,8 @@ e.g `/suggest?player=76482434`
   * account_id is inferred from username via the API https://api.opendota.com/api/search, which guesses by personaname. This is not accurate as multiple accounts may have the same personaname.
 
 ___
+
+### Write-up & Explanation
 
 #### 1. Choice of stack
 
