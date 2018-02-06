@@ -1,17 +1,15 @@
 ## Honestbee Data Engineering team interview test
 
-___
-
 #### 1. Leaderboard
 _Given a list of player(s) (either player_id or username and assuming all players have a Dota2 public profile), return a leaderboard of the players based on their win rate over time (last week, last month, last year...)._
 
-*route:* `/leaderboard`
+**route:** `/leaderboard`
   * player_ids - a comma separated list of account_ids / usernames
   * time_frame - ('week'/'month'/'year'), maps to values (7/30/365)
 
 e.g `/leaderboard?player_ids=76482434,4294967295&time_frame=month`
 
-*response:*
+**response:**
 > Array of player objects
 > - account_id
 > - win_rate
@@ -20,28 +18,28 @@ e.g `/leaderboard?player_ids=76482434,4294967295&time_frame=month`
 #### 2. Comparison
 _Given two players, return a comparison between the two players. The attributes of the players for comparison can be at your choice._
 
-*route:* `/compare`
+**route:** `/compare`
   * player_A - the first player's account_id / username
   * player_B - the second player's account_id / username
 
 e.g `/compare?player_A=76482434&player_B=4294967295`
 
-*response:*
+**response:**
 > Object of comparison fields with the better player as the value
 
 #### 3. Suggestion
 _Given one player, return a suggestion of a hero that one player should play based on the player's historical data._
 
-*route:* `/suggest`
+**route:** `/suggest`
   * player - the player's account_id / username
 
 e.g `/suggest?player=76482434`
 
+**response:**
+> A single hero name suggestion
+
 #### Caveats:
   * account_id is inferred from username via the API https://api.opendota.com/api/search, which guesses by personaname. This is not accurate as multiple accounts may have the same personaname.
-
-*response:*
-> A single hero name suggestion
 
 ___
 
