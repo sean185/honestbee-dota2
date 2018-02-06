@@ -66,10 +66,24 @@ ___
 At the moment the requirements are still vague and I did not want to put in unnecessary work without a clear product in mind.
 Hug allowed for quick and sensible prototyping of APIs while providing failsafes and catches automatically.
 
+**Pros of Hug**
+  * clear syntax and straightforward use of decorators, compared to Twisted, Tornado, etc.
+  * more featured and offers type casting and checking, compared to Web.py
+  * lightweight and zero configuration required, compared to Django
+
+**Pros of not using a DB**
+  * until the product has a clear use for it, no need to add a resource overhead
+  * data retrieved is always up to date
+
+**Cons of not using a DB**
+  * choosing to cache player data will overload memory usage in time
+  * lack of persistent caching of data
+
 #### 2. Product Roadmap
 
 Assuming that the end goal is along the lines of building a *Talent Scout* or *Butler Service*, useful improvements would include:
   * Time-series tracking, to see if a player endeavors to improve.
+  * Extrapolated trajectories, to predict player improvement curve
   * Role-based comparison, to offer greater clarity and compartmentalization of a player's strengths.
   * Integrate matchups data, to better guess if the player has the potential to rise quickly in skill.
   * Machine-learning based suggestion engine, to offer more options like what other heroes the player could explore.
